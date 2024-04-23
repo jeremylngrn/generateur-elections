@@ -7,7 +7,7 @@ from models.question import Question
 
 def generate_questions(conf,group_conf):
     df = group_conf['df']
-    description = "Pour cette section, seulement une personne peut-être élue par poste."
+    description = "Pour cette section, seulement une personne peut-être élue par poste."
     postes = conf['postes_finissante']
 
     groups = []
@@ -15,11 +15,11 @@ def generate_questions(conf,group_conf):
     questions_map = {}
 
     for i, poste in enumerate(postes):
-        group = Group(name=poste, description=description)
+        group = Group(name=f"{poste} ({group_conf['semester']})", description=description)
         question = Question(
             code=f"Q{i + 1:02}",
             gid=group.gid,
-            title=f"Qui voulez-vous au poste de {poste}?",
+            title=f"Qui voulez-vous au poste de {poste} ({group_conf['semester']})?",
             attributes=[
                 Attribute("max_answers", "3"),
                 Attribute("max_subquestions", "3"),

@@ -46,7 +46,7 @@ def validate_survey_config(conf):
         exit()
 
     if conf['type'] == "la finissante" and (
-            len(conf['groups']) > 1 or not all(g['type'] == "finissante" for g in conf['groups'])
+            len(conf['groups']) > 2 or not all(g['type'] == "finissante" for g in conf['groups'])
     ):
         print(
             f"Elections for la finissante must only contain one finissante question group, see GroupConfig in config.py")
