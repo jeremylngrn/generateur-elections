@@ -9,7 +9,7 @@ Avant tout il faut avoir les csv des inscriptions dans `/example`. Il vous fait 
 
 ```
     docker build -t ageg-election .
-    docker run -i ageg-election /bin/bash -c 'cat result/ageg-survey.lss' > $PWD/result/ageg-survey.lss
+    docker run -i ageg-election /bin/bash -c 'cat output/survey.lss' > $PWD/output/survey.lss
 ```
 
 ### Si vous faites les élections de promo : 
@@ -17,7 +17,7 @@ Avant tout il faut avoir les csv des inscriptions dans `/example`. Il vous fait 
 
 ```
     docker build -t ageg-election .
-    docker run -i ageg-election /bin/bash -c 'cat result/finissante-survey.lss' > $PWD/result/finissante-survey.lss
+    docker run -i ageg-election /bin/bash -c 'cat output/survey.lss' > $PWD/output/survey.lss
 ```
 
 ## Setup environnement
